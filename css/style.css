@@ -112,9 +112,13 @@ header{
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  /* ! */
+  z-index: 9999;
   margin:0 auto;
 
+}
+
+.back.header-nav{
+  display: block;
 }
 
 header a{
@@ -158,6 +162,8 @@ padding:30px;
 width: 100%;
 transition: .3s;
 }
+
+
 
 
 /* ------------------------ */
@@ -353,7 +359,6 @@ padding:100px 0 40px;
 
 .section-title{
   padding:0 4vw;
-  /* スマホの時、4vwで指定しておくと15pxの余白が取れて、タブレットで30pxの余白が取れやすい */
   font-size: 3rem;
   margin-bottom: 50px;
 }
@@ -427,6 +432,7 @@ header{
   height: 3px;
   width: 30px;
   background-color: #fff;
+  transition: all .7s;
 }
 .bar_top{
   margin-bottom: 8px;
@@ -435,9 +441,21 @@ header{
   margin-bottom: 8px;
 }
 
+.cross.burger-btn span:nth-child(1){
+  transform: translateY(11px)rotate(-45deg);
+}
+.cross.burger-btn span:nth-child(2){
+  opacity: 0;
+}
+.cross.burger-btn span:nth-child(3){
+  transform: translateY(-11px)rotate(45deg);
+}
+
+
+
+
   button{
     background-color: transparent;
-    /* 背景色を無効にする（ハンバーガーメニューに余計な背景色が着く場合） */
     border: none;
     cursor: pointer;
     outline: none;

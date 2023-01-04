@@ -1,4 +1,3 @@
-// sticky-header
 
 $(function() {
   let $win = $(window),
@@ -24,7 +23,6 @@ $win.on('load scroll',function(){
     
 
 
-       //ファーストビューのslider
   $('.slider').slick({
     autoplay: true,
     autoplaySpeed: 2000,
@@ -34,9 +32,21 @@ $win.on('load scroll',function(){
   });
 
   
-  //ハンバーガーメニューの開閉
   $('.burger-btn').on('click',function(){
     $('.header-nav').fadeToggle(300);
     $('.burger-btn').toggleClass('cross');
     $('body').toggleClass('noscroll');
 });
+
+
+  $(function(){
+    $('a[href^="#"]').click(function(){
+      let speed = 500;
+      let href= $(this).attr("href");
+      let target = $(href == "#" || href == "" ? 'html' : href);
+      let position = target.offset().top;
+      $("html, body").animate({scrollTop:position}, speed, "swing");
+      return false;
+    });
+  });
+  
