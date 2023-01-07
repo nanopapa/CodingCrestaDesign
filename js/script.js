@@ -8,7 +8,6 @@ $(function() {
 
 $win.on('load scroll',function(){
   let value = $(this).scrollTop();
-    if($win.width()>768)
 
       if ( value > fvHeight) {
         $header.addClass(fixedClass);
@@ -62,3 +61,5 @@ $('.sp__menu li a').on('click',function(){
     });
   });
   
+
+
