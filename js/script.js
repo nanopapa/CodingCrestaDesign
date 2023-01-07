@@ -33,11 +33,23 @@ $win.on('load scroll',function(){
 
   
   $('.burger-btn').on('click',function(){
-    $('.header-nav').fadeToggle(300);
+    $('.sp__menu').toggleClass('panelactive');
     $('.burger-btn').toggleClass('cross');
     $('body').toggleClass('noscroll');
 });
 
+$('.sp__menu').on('click',function(){
+  $('.sp__menu').removeClass('panelactive');
+  $('.burger-btn').removeClass('cross');
+  $('body').removeClass('noscroll');
+});
+
+
+$('.sp__menu li a').on('click',function(){
+  $('.sp__menu').removeClass('panelactive');
+  $('.burger-btn').removeClass('cross');
+  $('body').removeClass('noscroll');
+});
 
   $(function(){
     $('a[href^="#"]').click(function(){
